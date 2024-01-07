@@ -11,7 +11,7 @@ public class Main {
 
         boolean devam = true;
         while (devam) {
-            System.out.println("Sözlüğe ulaşmak için 1 \n Seviye testine ulaşmak için 2 \n Egzersizlere ulaşmak için 3 \n uygulamadan ayrılmak için 4'ü tuşlayınız.");
+            System.out.println("Sözlüğe ulaşmak için 1'i\nSeviye testine ulaşmak için 2'yi\nEgzersizlere ulaşmak için 3'ü\nUygulamadan ayrılmak için 4'ü tuşlayınız.");
 
             Scanner scan = new Scanner(System.in);
 
@@ -37,8 +37,8 @@ public class Main {
                         break;
 
                 case 3:
-                    int secme3;
-                    System.out.println("Ulaşmak istediğiniz egzersizi seçiniz.\n 1=Kolay seviye\n 2=Orta Seviye \n 3= Zor Seviye");
+                    int secme3;//case int değil stirng ile hata önlenecek
+                    System.out.println("Ulaşmak istediğiniz egzersizi seçiniz.\n1=Kolay seviye\n2=Orta Seviye\n3= Zor Seviye");
                     secme3 = scan.nextInt();
                     switch (secme3) {
                         case 1:

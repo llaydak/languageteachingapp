@@ -1,10 +1,11 @@
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class KullaniciYonetimi {
 
-    static boolean confirm;
+    static boolean onay;
 
     public void girisAl()
     {
@@ -12,28 +13,29 @@ public class KullaniciYonetimi {
 
         dosyadanBilgileriOku();
 
-        while (!confirm) {
-            System.out.println("1. Giriş Yap");
-            System.out.println("2. Kayıt Ol");
-            System.out.println("3. Çıkış");
-            System.out.print("Seçiminiz: ");
-            int secim = scanner.nextInt();
+        while (!onay) {
+                System.out.println("1. Giriş Yap");
+                System.out.println("2. Kayıt Ol");
+                System.out.println("3. Çıkış");
+                System.out.print("Seçiminiz: ");
+                String secim =scanner.next();
 
-            switch (secim) {
-                case 1:
-                    girisYap(scanner);
-                    break;
-                case 2:
-                    kayitOl(scanner);
-                    break;
-                case 3:
-                    System.out.println("Çıkış yapılıyor...");
-                    System.exit(0);
-                default:
-                    System.out.println("Geçersiz seçim. Lütfen tekrar deneyin.");
+                switch (secim) {
+                    case "1":
+                        girisYap(scanner);
+                        break;
+                    case "2":
+                        kayitOl(scanner);
+                        break;
+                    case "3":
+                        System.out.println("Çıkış yapılıyor...");
+                        System.exit(0);
+
+                    default:
+                        System.out.println("Geçersiz seçim. Lütfen tekrar deneyin.");
+                }
             }
         }
-    }
 
     private static void girisYap(Scanner scanner) {
         System.out.print("Kullanıcı Adı: ");
@@ -50,7 +52,7 @@ public class KullaniciYonetimi {
         if (sifre.equals(KullaniciGirisi.kullaniciBilgileri.get(kullaniciAdi))) {
             System.out.println("Giriş başarılı!");
 
-            confirm=true;
+            onay=true;
         } else {
             System.out.println("Şifre yanlış. Lütfen tekrar deneyin.");
         }

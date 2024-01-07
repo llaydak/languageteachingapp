@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public abstract class SeviyeTesti {
     String[] sorular = new String[5];
-    String[] secenekler= new String[5];
+    String[] secenekler = new String[5];
     String[] cevaplar = new String[5];
     int skor;
     int sorusayaci;
@@ -28,10 +28,12 @@ public abstract class SeviyeTesti {
         System.out.println("Toplam geçen süre: " + gecenSureFormatli);
         return skor;
     }
+
     private String sureFormat(long milisaniye) {
         SimpleDateFormat formatdakikasaniye = new SimpleDateFormat("mm:ss");
         return formatdakikasaniye.format(new Date(milisaniye));
     }
+
     private String sureFormat(Date date) {
         SimpleDateFormat formatDakikaSaniye = new SimpleDateFormat("DD/MM/yyyy HH:mm:ss");
         return formatDakikaSaniye.format(date);
